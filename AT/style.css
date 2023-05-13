@@ -1,0 +1,283 @@
+
+/* اساسيات في كل موقع عدا نوع الخط */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+/* تنسيقات الصفحة العلوية navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* تنسيقات لوكو */
+.nav{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    
+}
+/* تنسيقات انيميشن لوكو على اليسار */
+.nav h1{
+    opacity: 0;
+    animation: logo 3s ease forwards;
+    animation-delay: 4.5s;
+}
+
+/* home about call us تنسيقات  */
+
+.nav2{
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    
+    /* انيميشن الخاص بالناف بار  */
+    animation: nav2 8s ease forwards;
+    animation-delay: 4.5s;
+    
+}
+.nav2 a{
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    transition: 0.9s;
+
+    
+}
+.nav2 a:hover{
+    color: #047a00;
+    transform: scale(1.1)
+}
+
+.nav2 .other{
+    color:#544e88;
+}
+
+/* تنسيقات الخاصة بال sign up sign in */
+
+.regester{
+    display: flex;
+    gap: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    align-items: center;
+
+    /* انيميشن الخاص بتسجيل الدخول والاشتراك في اعلى اليمين  */
+    opacity: 0;
+    animation: reg 8s ease forwards;
+    animation-delay: 4.5s;
+    
+}
+.regester a{
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border: 2px rgb(242, 242, 242) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    
+}
+.regester a:hover{
+    color:#544e88;
+    
+}
+.regester i{
+   color: green;
+   font-size: 25px;
+    
+    
+}
+
+/* تنسيقات خاصة بالخلفية المتحركة  */
+.main:before {
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2100px;
+    /* يمكن تعديل الخلفية المتحركة بزيادة النسبة او تقليلها */
+    top: 10%;
+    right: 49%;
+    transform: translateY(-50%);
+    background-color: #544e88;
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    z-index: -1;
+    /* انيميشن خاص بتحريك الخلفية  */
+    animation: sliderh1 5s ease forwards;
+    animation-delay: 0s;
+}
+
+/* تنسيق الصفحة الرئيسية المحتوية على اجزاء اليمين واليسار */
+.content{
+    display: flex;
+   
+}
+
+.left{
+    /* background-color: red; */
+   flex-basis: 50%;
+   width: 100%;
+   height: 100vh;
+   margin-top: 200px;
+   margin-left: 100px;
+   color: white;
+      /* انيميشن خاص بتحريك جهة اليسار */
+   opacity: 0;
+   animation: reg 8s ease forwards;
+   animation-delay: 4.5s;
+}
+.left h2{
+   font-size: 50px;
+   margin-bottom: 10px;
+   opacity: 0;
+} 
+.left h3{
+    font-size: 30px;
+    margin-bottom: 15px;
+ } 
+ .left p{
+    font-size: 18px;
+    margin-bottom: 45px;
+} 
+.left a{
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: 0.9s;
+
+} 
+ .left a:hover{
+    background-color: #474085;
+    color: white;
+}
+
+/* تنسيق صفحة اليمين  */
+
+.right{
+    flex-basis: 50%;
+    width: 100%;
+    height: 100vh;
+}
+
+/* تنسيق صورة في ليمين  */
+.right img{
+    margin-top: 100px;
+
+    /* انيميشن الخاص بالصورة في جهة اليمين  */
+    opacity: 0;
+    animation: im 9s ease forwards;
+    animation-delay: 4.5s;
+}
+
+
+/* تنفيذ جميع الانيميشنات التي ذكرت في السابق */
+
+/* انيميشن الخلفية المتحركة */
+
+@keyframes sliderh1 {
+    0%{
+ 
+         opacity: 0;
+         transform: translatey(0px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateY(-900px);
+ 
+     }
+     
+ }
+
+ 
+ /* انيميشن لوكو */
+
+@keyframes logo {
+    0%{
+ 
+         opacity: 0;
+         transform: translateY(100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateY(0);
+ 
+     }
+     
+ }
+ 
+ /* انيميشن لخاص بالناف بار */
+ @keyframes nav2 {
+    0%{
+ 
+         opacity: 0;
+         transform: translateY(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translateY(0);
+ 
+     }
+     
+ }
+
+ /* انيميشن لخاص بتسجيل الدخول والاشتراك */
+ 
+ @keyframes reg {
+    0%{
+ 
+         opacity: 0;
+         transform: translatex(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translatex(0);
+ 
+     }
+     
+ }
+
+/* انيميشن لخاص بالتايتل في صفحة اليسار */
+
+ @keyframes title {
+    0%{
+ 
+         opacity: 0;
+         transform: translatex(-100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translatex(0);
+ 
+     }
+     
+ }
+
+ /* انيميشن تحريك الصورة  */
+ @keyframes im {
+    0%{
+ 
+         opacity: 0;
+         transform: translatex(100px);
+     }
+    100%{
+     opacity: 1;
+     transform: translatex(0);
+ 
+     }
+     
+ }
